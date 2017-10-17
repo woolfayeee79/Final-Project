@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bootcont</title>
+    <title>IT 231 Demo W3CSS</title>
+    
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <body class="container">
-    <nav class="navbar navbar-success">
-  
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Quote App</a>
+  <body class="w3-container">
+
+    <div class="w3-bar w3-light-grey">
+      <a href="/" class="w3-bar-item w3-button"><%= image_tag 'mad-icon.png', alt: 'The Mad Icon', height: '28', width: '28', style: 'display: block; margin-left: auto; margin-right: auto; margin-bottom: none; margin-top: none' %></a>
+      <a href="/static_pages/home" class="w3-bar-item w3-button">Home</a>
+      <a href="/" class="w3-bar-item w3-button">Root</button>
+      <a href="/static_pages/help" class="w3-bar-item w3-button">Help</a>
+      <a href="/static_pages/about" class="w3-bar-item w3-button">About</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="/static_pages/home">home</a></li>
-      <li><a href="/quotes">Quotes</a></li>
-      <li><a href="/static_pages/help">help</a></li>
-      <li><a href="/static_pages/about">about</a></li>
-    </ul>
-  
-    </nav>
-    <div>
+
+   <div class="w3-container">
     <%= yield %>
-    
-    </div>
+   </div>    
+
   </body>
 </html>

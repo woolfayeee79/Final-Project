@@ -1,25 +1,34 @@
-<p id="notice"><%%= notice %></p>
+<p id="notice" class="w3-panel"><%%= notice %></p>
 
-<div class="panel panel-default">
+<div class="w3-panel w3-aqua">
 
-<div class="panel-heading"><%= singular_table_name %></div>
-
-<div class="panel-body">
-
+<table class="w3-table-all">
+<thead>
+  <tr>
+    <th><h1><%= singular_table_name %></h1></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<tr>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
 
-<p>
+<td>
   <strong><%= attribute.human_name %>:</strong>
+</td>
+<td>
   <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
-</p>
-
+</td>
+</tr>
 <% end -%>
 
+
+<tr>
+<td>
+<%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) ,class:"w3-button w3-light-gray" %> |
+<%%= link_to 'Back', <%= index_helper %>_path , class:"w3-button w3-light-gray" %>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-<div class="panel-footer">
-
-<%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) ,class:"btn btn-xs btn-danger" %> |
-<%%= link_to 'Back', <%= index_helper %>_path , class:"btn btn-xs btn-danger" %>
-
-</div></div>
