@@ -5,22 +5,30 @@
 <table class="w3-table-all">
 <thead>
   <tr>
-    <th><h1>cart</h1></th>
+    <th><h1>Cart</h1></th>
     <th></th>
   </tr>
 </thead>
 <tbody>
 <% @cart.line_items.each do |item| %>
 <tr>
-    <td><%= item.product.title %></td>
+    <td><%= item.quantity %> &times; <%= item.product.title %></td>
     <td><%= number_to_currency(item.product.price) %></td>
 	  <% end %>
+	  <tr>
+    <td colspan="1">Total Order Value </td><td><%= number_to_currency(@cart.total_price) %></td>
+    </tr>
 </tr>
-
+<td>
+ <%= link_to 'Edit', edit_cart_path(@cart) ,class:"w3-button w3-light-gray" %> 
+</td>
+<td>
+ <%= link_to 'Back', carts_path , class:"w3-button w3-light-gray" %>
+</td>
 <tr>
 <td>
-<%= link_to 'Edit', edit_cart_path(@cart) ,class:"w3-button w3-light-gray" %> |
-<%= link_to 'Back', carts_path , class:"w3-button w3-light-gray" %>
+<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Keep Shopping', store_index_url , class:"btn btn-primary" %>
 </td>
 </tr>
 </tbody>
