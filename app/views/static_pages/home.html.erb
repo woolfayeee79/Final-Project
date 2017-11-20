@@ -1,2 +1,57 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+    header {
+  background-image: url('https://hdwallsource.com/img/2016/7/library-wallpaper-pictures-50363-52054-hd-wallpapers.jpg');
+  background-size: cover;
+  background-position: center;
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+p {
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+.wrapper {
+    text-align: center;
+}
+
+.button{
+  position: center;
+  top: 50%;
+}
+h1.black {color:black}
+ol {
+    background: #ffff99;
+    padding: 20px;
+}
+li {
+    background: #ffb84d;
+    padding: 5px;
+    margin-left: 35px;
+}
+</style>
+</head>
+<header class= "w3-background-img:https://hdwallsource.com/img/2016/7/library-wallpaper-pictures-50363-52054-hd-wallpapers.jpg" style="padding:128px 16px"  >
+  <h1 class="w3-margin w3-jumbo">WELCOME TO THE BOOKSTORE</h1>
+  <p class="w3-xlarge">We are a speacialty bookstore selling tutorial<br> books about web development!</br></p>
+  <div class="wrapper">
+  <button onclick="location.href='/products'" class="w3-button w3-black w3-padding-large w3-large w3-margin-top button">Get Started</button>
+  </div>
+</header>
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1 class="black">Where we are located:</h1>
+  <ol>
+    <li>Chicago, IL</li>
+    <li>New York, NY</li>
+    <li>Los Angeles, CA</li>
+  </ol>
+</div>
+
